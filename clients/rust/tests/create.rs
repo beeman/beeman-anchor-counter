@@ -7,9 +7,13 @@ use solana_sdk::{signature::Signer, signer::keypair::Keypair, transaction::Trans
 
 #[tokio::test]
 async fn create() {
-    let mut context = ProgramTest::new("beeman_anchor_counter", beeman_anchor_counter_client::ID, None)
-        .start_with_context()
-        .await;
+    let mut context = ProgramTest::new(
+        "beeman_anchor_counter",
+        beeman_anchor_counter_client::ID,
+        None,
+    )
+    .start_with_context()
+    .await;
 
     // Given a new empty account.
 
@@ -33,7 +37,11 @@ async fn create() {
 
     // Then an account was created with the correct data.
 
-    let account = context.banks_client.get_account(address.pubkey()).await.unwrap();
+    let account = context
+        .banks_client
+        .get_account(address.pubkey())
+        .await
+        .unwrap();
 
     assert!(account.is_some());
 
