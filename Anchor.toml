@@ -1,0 +1,6 @@
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[programs.localnet]
+anchor_counter = "HofEBYD8C4G72HjCYbs3eiHXSoYXJdpQsQnVtAcf22bj"
